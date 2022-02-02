@@ -1,0 +1,18 @@
+server:
+  port: 60010
+spring:
+  application:
+    name: storage-service
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group-id-test-topic
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
